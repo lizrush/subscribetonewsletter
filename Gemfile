@@ -32,9 +32,9 @@ end
 gem "mailchimp-api", "~> 2.0.4"
 
 gem 'bootstrap-sass'
-group :development do
-  gem 'rails_layout'
-end
+
+
+gem 'rails_layout'
 
 gem 'sqlite3', :group => :development
 gem 'pg', :group => :production
