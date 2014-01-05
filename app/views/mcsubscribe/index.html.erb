@@ -1,0 +1,9 @@
+<h3>Sign up for periodic updates</h3>
+<p>Please enter your email address below. You will be sent a confirmation email to finish the process.</p>
+<br> 
+<%= form_tag('/mcsubscribe/subscribe', method: "post", id: "mcsubscribe", remote: "true") do -%>
+   <%= email_field(:email, :address, {id: "email", placeholder: "email address"}) %>
+   <%= submit_tag("Subscribe") %>
+<% end %>
+
+<div id="response"></div>

@@ -1,0 +1,11 @@
+== README
+
+This is a single function app that I created as my exploratory app for Ada winter break.
+As I was picking this project, I had four main goals:
+
+1. Make a standalone single function app
+2. Integrate another product's API
+3. Explore AJAX
+4. Mess around with bootstrap
+
+This app is a simple rails app that allows visitors to subscribe to my newsletter. I integrated Mailchimp API and tried to learn some stuff about AJAX and how to implement it in rails. 
