@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Mailchimp" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Mailchimp" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "subscribe to e.m. rush" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "a place to subscribe to my newsletter" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -12,9 +12,17 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+           <main role="main">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+        </main>
+        </div>
+      </div>
+    </div>
+  
   </body>
 </html>
