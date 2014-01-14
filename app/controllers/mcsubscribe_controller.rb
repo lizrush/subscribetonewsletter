@@ -1,5 +1,7 @@
 # McsubscribeController handles the subscription action for Mailchimp
 class McsubscribeController < ApplicationController
+  protect_from_forgery with: :exception
+  
   def index
   end
 
