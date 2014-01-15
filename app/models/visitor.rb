@@ -1,18 +1,6 @@
 class Visitor < ActiveRecord::Base
- 
+ validates :ip_address,    presence: true
 
-
-  def current_visitor
-    @current_visitor ||= if session[:visitor_id]
-      Visitor.find(session[:visitor_id])
-    else
-      visitor = Visitor.create(ip_address: request.remote_ip, mobile: mobile_device?)
-      session[:visitor_id] = visitor.id
-      visitor
-    end
-  end
-  
-  helper_method :current_visitor
 
   
   def self.return_visitors
@@ -30,7 +18,9 @@ class Visitor < ActiveRecord::Base
   end
 
   def self.total_views
-    sum(:pageviews)
+    sum(:ip_address)
   end
-  
+
+
+
 end

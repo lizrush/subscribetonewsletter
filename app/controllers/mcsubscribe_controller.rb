@@ -1,6 +1,7 @@
 # McsubscribeController handles the subscription action for Mailchimp
 class McsubscribeController < ApplicationController
   protect_from_forgery with: :exception
+  before_action :update_visit_count
   
   def index
   end
@@ -38,5 +39,10 @@ class McsubscribeController < ApplicationController
             format.json { render :json => { :message => "Looks like you didn't actually input anything... please try again!" } }
           end
     end
+  end
+
+  private
+  def update_visit_count
+    current_visitor.update(pageviews: current_visitor.pageviews + 1)
   end
 end

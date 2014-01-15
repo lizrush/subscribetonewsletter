@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113235625) do
+ActiveRecord::Schema.define(version: 20140115000259) do
 
   create_table "visitors", force: true do |t|
     t.string   "ip_address"
-    t.integer  "pageviews"
+    t.integer  "pageviews",      default: 0
     t.text     "referrer"
-    t.integer  "numberofvisits"
+    t.integer  "numberofvisits", default: 0
     t.string   "device"
     t.string   "browser"
     t.string   "browserversion"

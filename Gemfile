@@ -37,7 +37,7 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end
 
-gem 'useragent'
+gem 'agent_orange'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
