@@ -19,15 +19,15 @@ class ApplicationController < ActionController::Base
       else 
         @current_visitor = Visitor.create(find_visitor_info)
         
-        cookies[:visitor_id] = @current_visitor.id
-        cookies[:last_visit] = Time.now
+        cookies.permanent[:visitor_id] = @current_visitor.id
+        cookies.permanent[:last_visit] = Time.now
       end
 
-      if Time.now - cookies[:last_visit] > 1.hour
+      if Time.now - Time.new(cookies.permanent[:last_visit]) > 1.hour
         @current_visitor.update(numberofvisits: @current_visitor.numberofvisits + 1)
       end
 
-      cookies[:last_visit] = Time.now
+      cookies.permanent[:last_visit] = Time.now
     end
 
     @current_visitor
@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
     result[:browserversion] = parser.device.engine.browser.version.to_s
     result[:ip_address] = request.remote_ip.to_s
     result[:referrer] = request.referrer.to_s
-    # result[:numberofvisits] = 1
+    result[:numberofvisits] = 1
 
     result
   end
@@ -53,5 +53,5 @@ class ApplicationController < ActionController::Base
   def update_pageviews_count
     current_visitor.update(pageviews: current_visitor.pageviews + 1)
   end
-  
+
 end
