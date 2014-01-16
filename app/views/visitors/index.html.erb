@@ -26,3 +26,52 @@
   </tbody>
    <%end%>
 </table>
+
+<br>
+
+<table>
+  <thead>
+    <th>Chrome</th>
+    <th>Firefox</th>
+    <th>Safari</th>
+    <th>IE</th>
+    <th>Other</th>  
+  </thead> 
+  <tbody>
+    <td id="chrome"> <%= @chrome %></td>
+    <td id="firefox"> <%= @firefox %></td>
+    <td id="safari"> <%= @safari %></td>
+    <td id="ie"> <%= @ie %></td>
+    <td id="other"> <%= @other_browsers %></td>
+  </tbody>
+</table>
+<canvas>
+  
+</canvas>
+
+<br>
+
+
+<table>
+  <thead>
+    <th>Total Visitors</th>
+    <th>New Visitors</th>
+    <th>Returning Visitors</th>
+  </thead> 
+  <tbody>
+    <td id="totalvisitors"> <%= @total_visitors %></td>
+    <td id="newvisitors"> <%= @new_visitors %></td>
+    <td id="returningvisitors"> <%= @returning_visitors %></td>
+  </tbody>
+</table>
+
+<br>
+
+<table>
+  <thead>
+    <th>Mobile Visitors</th>
+  </thead>
+  <tbody>
+    <td><%= @mobile %></td>
+  </tbody>
+</table>
