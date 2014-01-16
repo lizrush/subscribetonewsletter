@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
 
   def current_visitor
     unless @current_visitor
-      if cookies[:visitor_id]
-        @current_visitor = Visitor.find(cookies[:visitor_id])
+      if cookies.permanent[:visitor_id]
+        @current_visitor = Visitor.find(cookies.permanent[:visitor_id])
       else 
         @current_visitor = Visitor.create(find_visitor_info)
         
@@ -23,11 +23,12 @@ class ApplicationController < ActionController::Base
         cookies.permanent[:last_visit] = Time.now
       end
 
-      if Time.now - Time.parse(cookies.permanent[:last_visit]) > 1.hour
+      Rails.logger.warn cookies.permanent[:last_visit].inspect
+      if Time.now.to_i - cookies.permanent[:last_visit].to_i > 1.hour
         @current_visitor.update(numberofvisits: @current_visitor.numberofvisits + 1)
       end
 
-      cookies.permanent[:last_visit] = Time.now
+      cookies.permanent[:last_visit] = Time.now.to_i
     end
 
     @current_visitor
