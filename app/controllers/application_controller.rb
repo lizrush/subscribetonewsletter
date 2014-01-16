@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
         @current_visitor = Visitor.create(find_visitor_info)
         
         cookies.permanent[:visitor_id] = @current_visitor.id
-        cookies.permanent[:last_visit] = Time.now
+        cookies.permanent[:last_visit] = Time.now.to_i
       end
 
       Rails.logger.warn cookies.permanent[:last_visit].inspect
