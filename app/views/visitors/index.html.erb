@@ -45,9 +45,7 @@
     <td id="other"> <%= @other_browsers %></td>
   </tbody>
 </table>
-<canvas>
-  
-</canvas>
+<canvas id="browserchart" width="500" height="300"></canvas>
 
 <br>
 
@@ -64,14 +62,18 @@
     <td id="returningvisitors"> <%= @returning_visitors %></td>
   </tbody>
 </table>
-
+<canvas id="returningchart" width="500" height="300"></canvas>
 <br>
 
 <table>
   <thead>
     <th>Mobile Visitors</th>
+    <th>Non-mobile Visitors</th>
   </thead>
   <tbody>
     <td><%= @mobile %></td>
+    <td><%= @nonmobile %> </td>
   </tbody>
 </table>
+<br>
+<canvas id="mobilechart" width="500" height="300"></canvas>

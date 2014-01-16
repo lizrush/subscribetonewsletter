@@ -14,7 +14,8 @@ class VisitorsController < ApplicationController
     @firefox = count_browsers[:firefox]
     @other_browsers = count_browsers[:other]
 
-    @mobile = count_mobile
+    @mobile = count_mobile[:mobile]
+    @nonmobile = count_mobile[:nonmobile]
   end
 
   private 
@@ -40,7 +41,10 @@ class VisitorsController < ApplicationController
   end
 
   def count_mobile
-    Visitor.where(mobile: 'true').count
+    count_mobile = {}
+    count_mobile[:mobile] = Visitor.where(mobile: 'true').count
+    count_mobile[:nonmobile] = Visitor.where(mobile: 'false').count
+    count_mobile
   end
 
 end
