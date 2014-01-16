@@ -1,5 +1,5 @@
 $(document).ready(function(){
- 
+ console.log("page loaded")
   $('form#mcsubscribe')
 
 		// Returns response after success
@@ -12,6 +12,7 @@ $(document).ready(function(){
       $divResponse.html(data.message);
     })
     .bind('ajax:complete', function(evt, xhr, status){
+	 console.log("complete")
       var $divResponse = $('div#response');
     })
     .bind("ajax:error", function(evt, xhr, status, error){
