@@ -23,7 +23,6 @@ class ApplicationController < ActionController::Base
         cookies.permanent[:last_visit] = Time.now.to_i
       end
 
-      Rails.logger.warn cookies.permanent[:last_visit].inspect
       if Time.now.to_i - cookies.permanent[:last_visit].to_i > 1.hour
         @current_visitor.update(numberofvisits: @current_visitor.numberofvisits + 1)
       end

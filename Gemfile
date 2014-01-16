@@ -38,6 +38,12 @@ group :test, :development do
 end
 
 gem 'agent_orange'
+
+group :development do
+  gem "better_errors"
+end
+
+gem "binding_of_caller"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
