@@ -1,21 +1,31 @@
+<h2>Visits by Location </h2>
+<div id="map-container" style="height:300px; width:500px"> 
+  <div id="map-canvas" style="width: 100%; height: 100%"></div>
+</div>
+
+<br>
+
 <div id="browserstats">
 <h2>Visits by Browser </h2>
   <canvas id="browserchart" width="500" height="300"></canvas>
-  <table>
+  <table class="table table-striped">
     <thead>
+    <tr>
       <th>Chrome</th>
       <th>Firefox</th>
       <th>Safari</th>
       <th>IE</th>
-      <th>Other</th>  
+      <th>Other</th> 
+      </tr>
     </thead> 
     <tbody>
+    <tr>
       <td id="chrome"> <%= @chrome %></td>
       <td id="firefox"> <%= @firefox %></td>
       <td id="safari"> <%= @safari %></td>
       <td id="ie"> <%= @ie %></td>
       <td id="other"> <%= @other_browsers %></td>
-    </tbody>
+    </tr></tbody>
   </table>
 </div>
 
@@ -23,7 +33,7 @@
 <div id="Return Visitors">
 <h2>New vs. Returning Visitors </h2>
   <canvas id="returningchart" width="500" height="300"></canvas>
-  <table>
+  <table class="table table-striped">
     <thead>
       <th>Total Visitors</th>
       <th>New Visitors</th>
@@ -41,7 +51,7 @@
 <div id="mobilevisits">
 <h2>Mobile vs. Non-Mobile Visitors </h2>
 <canvas id="mobilechart" width="500" height="300"></canvas>
-<table>
+<table class="table table-striped">
   <thead>
     <th>Mobile Visitors</th>
     <th>Non-mobile Visitors</th>
@@ -55,7 +65,7 @@
 <br>
 
 <h2>All Stats: </h2>
-<table>
+<table class="table table-striped">
   <thead>
     <th>Id</th>
     <th>Pageviews</th>
@@ -83,3 +93,4 @@
   </tbody>
    <%end%>
 </table>
+

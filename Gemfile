@@ -44,6 +44,8 @@ group :development do
 end
 
 gem "binding_of_caller"
+
+gem "geocoder"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
