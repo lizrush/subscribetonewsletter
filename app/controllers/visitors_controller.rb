@@ -42,8 +42,8 @@ class VisitorsController < ApplicationController
 
   def count_mobile
     count_mobile = {}
-    count_mobile[:mobile] = Visitor.where(mobile: 'true').count
-    count_mobile[:nonmobile] = Visitor.where(mobile: 'false').count
+    count_mobile[:mobile] = Visitor.where(mobile: true).count
+    count_mobile[:nonmobile] = Visitor.where(mobile: false).count
     count_mobile
   end
 

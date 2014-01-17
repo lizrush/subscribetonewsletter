@@ -1,7 +1,7 @@
 (function(window){
   console.log("this pie chart js laoded")
   document.addEventListener( "DOMContentLoaded" , function( e ){
-    var canvas = document.getElementById('#returningchart'),
+    var canvas = document.getElementById('returningchart'),
       context = canvas.getContext( '2d' );
 
     var newVisitorsEl = document.querySelector( "#newvisitors" ); //document.getElementById( "new" );
