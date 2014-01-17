@@ -7,15 +7,16 @@ class VisitorsController < ApplicationController
     puts "index before variables"
     @total_visitors = count_visitors[:total]
     @returning_visitors = count_visitors[:returning]
-    @new_visitors = count_visitors[:newvisitors]
+    @new_visitors = count_visitors[:newvisitors].to_i
 
     @chrome = count_browsers[:chrome]
     @safari = count_browsers[:safari]
     @firefox = count_browsers[:firefox]
+    @ie = count_browsers[:ie]
     @other_browsers = count_browsers[:other]
 
-    @mobile = count_mobile[:mobile]
-    @nonmobile = count_mobile[:nonmobile]
+    @mobile = count_mobile[:mobile].to_i
+    @nonmobile = count_mobile[:nonmobile].to_i
   end
 
   private 
@@ -25,7 +26,7 @@ class VisitorsController < ApplicationController
     count_visitors = {}
     count_visitors[:total] = Visitor.all.count
     count_visitors[:returning] = Visitor.where('numberofvisits'.to_i > 1).count
-    count_visitors[:new] = Visitor.where('numberofvisits'.to_i < 2).count
+    count_visitors[:new] = Visitor.where('numberofvisits'.to_i == 1).count
     count_visitors
   end
 
@@ -34,7 +35,7 @@ class VisitorsController < ApplicationController
     count_browsers[:chrome] = Visitor.where(browser: "Chrome").count
     count_browsers[:safari] = Visitor.where(browser: "Safari").count
     count_browsers[:firefox] = Visitor.where(browser: "Firefox").count
-    count_browsers[:ie] = Visitor.where(browser: "Internet Explorer").count
+    count_browsers[:ie] = Visitor.where(browser: "MSIE").count
     main_browsers = count_browsers[:chrome] + count_browsers[:safari] + count_browsers[:firefox] + count_browsers[:ie]
     count_browsers[:other] = Visitor.all.count - main_browsers
     count_browsers

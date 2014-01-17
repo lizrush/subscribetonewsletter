@@ -1,15 +1,15 @@
 (function(window){
   document.addEventListener( 'DOMContentLoaded' , function( e ){
-    var canvas = document.getElementById('returningchart'),
+    var canvas = document.getElementById('mobilechart'),
       context = canvas.getContext( '2d' );
 
-    var newVisitorsEl = document.querySelector( '#new_visitors' ),
-        retVisitorsEl = document.querySelector( '#returning_visitors' ),
-        newVisitors = parseInt( newVisitorsEl.innerHTML, 10 ),
-        retVisitors = parseInt( retVisitorsEl.innerHTML, 10 ),
-        totalVisitors = newVisitors + retVisitors;
+    var mobileVisitorsEl = document.querySelector( '#mobile_visits' ),
+        nonmobileVisitorsEl = document.querySelector( '#nonmobile_visits' ),
+        mobileVisitors = parseInt( mobileVisitorsEl.innerHTML, 10 ),
+        nonmobileVisitors = parseInt( nonmobileVisitorsEl.innerHTML, 10 ),
+        totalVisitors = mobileVisitors + nonmobileVisitors;
 
-    var newInRads = (newVisitors/totalVisitors) * (Math.PI*2),
+    var newInRads = (mobileVisitors/nonmobileVisitors) * (Math.PI*2),
       retInRads = (Math.PI*2) - newInRads;
 
     var originX = canvas.width/3,
@@ -48,9 +48,8 @@
     
     context.font = '10pt Helvetica';
     context.fillStyle = 'black';
-    context.fillStroke = 'black'
     context.textAlign = 'left';
-    context.fillText( 'New Visitors', 360, 113 );
-    context.fillText( 'Returning Visitors', 360, 148);
+    context.fillText( 'Mobile Visitors', 360, 113 );
+    context.fillText( 'Non-Mobile Visitors', 360, 148);
   });
 }(this));

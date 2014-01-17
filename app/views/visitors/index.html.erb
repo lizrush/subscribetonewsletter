@@ -1,3 +1,60 @@
+<div id="browserstats">
+<h2>Visits by Browser </h2>
+  <canvas id="browserchart" width="500" height="300"></canvas>
+  <table>
+    <thead>
+      <th>Chrome</th>
+      <th>Firefox</th>
+      <th>Safari</th>
+      <th>IE</th>
+      <th>Other</th>  
+    </thead> 
+    <tbody>
+      <td id="chrome"> <%= @chrome %></td>
+      <td id="firefox"> <%= @firefox %></td>
+      <td id="safari"> <%= @safari %></td>
+      <td id="ie"> <%= @ie %></td>
+      <td id="other"> <%= @other_browsers %></td>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<div id="Return Visitors">
+<h2>New vs. Returning Visitors </h2>
+  <canvas id="returningchart" width="500" height="300"></canvas>
+  <table>
+    <thead>
+      <th>Total Visitors</th>
+      <th>New Visitors</th>
+      <th>Returning Visitors</th>
+    </thead> 
+    <tbody>
+      <td id="totalvisitors"> <%= @total_visitors %></td>
+      <td id="new_visitors"> <%= @new_visitors %></td>
+      <td id="returning_visitors"> <%= @returning_visitors %></td>
+    </tbody>
+  </table>
+</div>
+<br>
+
+<div id="mobilevisits">
+<h2>Mobile vs. Non-Mobile Visitors </h2>
+<canvas id="mobilechart" width="500" height="300"></canvas>
+<table>
+  <thead>
+    <th>Mobile Visitors</th>
+    <th>Non-mobile Visitors</th>
+  </thead>
+  <tbody>
+    <td id="mobile_visits"><%= @mobile %></td>
+    <td id="nonmobile_visits"><%= @nonmobile %> </td>
+  </tbody>
+</table>
+</div>
+<br>
+
+<h2>All Stats: </h2>
 <table>
   <thead>
     <th>Id</th>
@@ -26,54 +83,3 @@
   </tbody>
    <%end%>
 </table>
-
-<br>
-
-<table>
-  <thead>
-    <th>Chrome</th>
-    <th>Firefox</th>
-    <th>Safari</th>
-    <th>IE</th>
-    <th>Other</th>  
-  </thead> 
-  <tbody>
-    <td id="chrome"> <%= @chrome %></td>
-    <td id="firefox"> <%= @firefox %></td>
-    <td id="safari"> <%= @safari %></td>
-    <td id="ie"> <%= @ie %></td>
-    <td id="other"> <%= @other_browsers %></td>
-  </tbody>
-</table>
-<canvas id="browserchart" width="500" height="300"></canvas>
-
-<br>
-
-
-<table>
-  <thead>
-    <th>Total Visitors</th>
-    <th>New Visitors</th>
-    <th>Returning Visitors</th>
-  </thead> 
-  <tbody>
-    <td id="totalvisitors"> <%= @total_visitors %></td>
-    <td id="newvisitors"> <%= @new_visitors %></td>
-    <td id="returningvisitors"> <%= @returning_visitors %></td>
-  </tbody>
-</table>
-<canvas id="returningchart" width="500" height="300"></canvas>
-<br>
-
-<table>
-  <thead>
-    <th>Mobile Visitors</th>
-    <th>Non-mobile Visitors</th>
-  </thead>
-  <tbody>
-    <td><%= @mobile %></td>
-    <td><%= @nonmobile %> </td>
-  </tbody>
-</table>
-<br>
-<canvas id="mobilechart" width="500" height="300"></canvas>
