@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115000259) do
+ActiveRecord::Schema.define(version: 20140117225936) do
 
   create_table "visitors", force: true do |t|
     t.string   "ip_address"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20140115000259) do
     t.boolean  "mobile"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "coordinates"
+    t.string   "city"
   end
 
 end
