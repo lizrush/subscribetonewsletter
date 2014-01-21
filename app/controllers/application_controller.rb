@@ -46,6 +46,9 @@ class ApplicationController < ActionController::Base
     result[:ip_address] = request.remote_ip.to_s
     result[:referrer] = request.referrer.to_s
     result[:numberofvisits] = 1
+    result[:city] = request.city
+    result[:latitude] = request.latitude
+    result[:longitude] = request.longitude
 
     result
   end

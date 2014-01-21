@@ -85,25 +85,17 @@
     <td><%= v.ip_address %></td>
     <td><%= v.referrer %></td>
     <td><%= v.numberofvisits %></td>
-    <td><%= v.device %></td>
+    <td><%= v.device %></td>`
     <td><%= v.browser %></td>
     <td><%= v.browserversion %></td>
     <td><%= v.mobile %></td>
-
   </tbody>
    <%end%>
 </table>
+  <script>
+  var some_lat_lngs = <%= @lat_longs %>;
+  </script>
 
-      <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA1GYmGXezjpFAXkESQ0uB-DsL34WUduM&sensor=false">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 8
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA1GYmGXezjpFAXkESQ0uB-DsL34WUduM&sensor=false">
+  </script>
+  <script type="text/javascript" src="assets/pindrops.js"></script>

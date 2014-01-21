@@ -17,10 +17,14 @@ class VisitorsController < ApplicationController
 
     @mobile = count_mobile[:mobile].to_i
     @nonmobile = count_mobile[:nonmobile].to_i
+
+
+#make a variable for lats and longs that is an array of arrays
+    @latitudes = coordinates[:latitudes]
+    @longitudes = coordinates[:longitudes]
   end
 
   private 
-
  # refactor this later into model using sql to group and count
   def count_visitors
     count_visitors = {}
@@ -48,4 +52,10 @@ class VisitorsController < ApplicationController
     count_mobile
   end
 
+  def coordinates
+    coordinates = {}
+    coordinates[:latitudes] = Visitor.where('latitudes' != nil)
+    coordinates[:longitudes] = Visitor.where('longitudes' != nil)
+    coordinates
+  end
 end

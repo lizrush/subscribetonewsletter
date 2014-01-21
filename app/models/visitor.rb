@@ -1,6 +1,5 @@
 class Visitor < ActiveRecord::Base
- validates :ip_address,    presence: true
-
-
-
+	geocoded_by :ip_address
+	after_validation :geocode
+	validates :ip_address,    presence: true
 end

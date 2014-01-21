@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(version: 20140117225936) do
     t.boolean  "mobile"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "coordinates"
     t.string   "city"
+    t.string   "latitude"
+    t.string   "longitude"
   end
 
 end
