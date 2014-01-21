@@ -20,8 +20,7 @@ class VisitorsController < ApplicationController
 
 
 #make a variable for lats and longs that is an array of arrays
-    @latitudes = coordinates[:latitudes]
-    @longitudes = coordinates[:longitudes]
+    # @lat_longs = coordinates
   end
 
   private 
@@ -54,8 +53,8 @@ class VisitorsController < ApplicationController
 
   def coordinates
     coordinates = {}
-    coordinates[:latitudes] = Visitor.where('latitudes' != nil)
-    coordinates[:longitudes] = Visitor.where('longitudes' != nil)
+    coordinates[:latitudes] = Visitor.where('latitude' != nil)
+    coordinates[:longitudes] = Visitor.all('longitude' != nil)
     coordinates
   end
 end
