@@ -53,7 +53,8 @@ class VisitorsController < ApplicationController
   def coordinates
     latitude = Visitor.pluck(:latitude)
     longitude = Visitor.pluck(:longitude)
-    coordinates =latitude.zip(longitude)
+    coordinates = latitude.zip(longitude)
+    coordinates.delete_if {|array| array.include?("0.0")}
     coordinates
   end
 
