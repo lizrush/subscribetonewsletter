@@ -12,3 +12,10 @@ This app is a simple rails app that allows visitors to subscribe to my newslette
 
 You can see it live here:
 http://liz-newsletter.herokuapp.com
+
+
+Update as of 22 Jan 2014:
+
+I used this app for the JS lessons. I learned how to get visitor data from the request, which I then displayed as various charts on the canvas element. 
+
+Additionally, I chose to further my exploration of javascript by implementing the google maps javascript api to generate a map and drop pins according to my visitors' ip address.
