@@ -19,7 +19,7 @@ class VisitorsController < ApplicationController
     @nonmobile = count_mobile[:nonmobile].to_i
 
     @lat_long_array = coordinates
-    gon.lat_long_array = @lat_long_array
+    gon.lat_long_array = @la
   end
 
   private 
@@ -51,8 +51,7 @@ class VisitorsController < ApplicationController
   end
 
   def coordinates
-    latitude = Visitor.pluck(:latitude)
-    longitude = Visitor.pluck(:longitude)
+    coordinates = Visitor.pluck(:latitude, :longitude)
     coordinates
   end
 
