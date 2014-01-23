@@ -1,17 +1,7 @@
+function initialize() {
 
-// var lat_lngs;
-// for (var i = 0; i < lat_lngs.length; i++) {
-//    var = marker = new google.maps.Marker({
-//     position: lat_lngs;
-//    });
-//    marker.setMap(map);
-// };
-
-
-// var pinsToDrop = new google.maps.LatLng()
-
-var myOptions = { mapTypeId: google.maps.MapTypeId.ROADMAP };
 var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+var myOptions = { mapTypeId: google.maps.MapTypeId.ROADMAP };
 var geocoder = new google.maps.Geocoder();
 
   geocoder.geocode({'address': 'US'}, function (results, status) {
@@ -20,5 +10,33 @@ var geocoder = new google.maps.Geocoder();
     map.fitBounds(results[0].geometry.viewport);               
   }); 
 
+var lat_long_array = 
+alert(gon.lat_long_array);
+for (var i = 0; i < lat_long_array.length; i++) {
+  var lat_lngs = (lat_long_array[i][0], lat_long_array[i][1]);
+  var marker = new google.maps.Marker({
+    position: lat_lngs,
+    animation: google.maps.Animation.DROP,
+   });
+   marker.setMap(map);
+  };
+};
+
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
 // To add the marker to the map, call setMap();
 // marker.setMap(map);
+
+
+
+//   var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+
+
+//   var marker = new google.maps.Marker({
+//       position: myLatlng,
+//       map: map,
+//       title: 'Hello World!'
+//   });
+// }

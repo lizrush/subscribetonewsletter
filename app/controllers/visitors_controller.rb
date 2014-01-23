@@ -18,9 +18,8 @@ class VisitorsController < ApplicationController
     @mobile = count_mobile[:mobile].to_i
     @nonmobile = count_mobile[:nonmobile].to_i
 
-
-#make a variable for lats and longs that is an array of arrays
-    # @lat_longs = coordinates
+    @lat_long_array = coordinates
+    gon.lat_long_array = @lat_long_array
   end
 
   private 
@@ -52,9 +51,9 @@ class VisitorsController < ApplicationController
   end
 
   def coordinates
-    coordinates = {}
-    coordinates[:latitudes] = Visitor.where('latitude' != nil)
-    coordinates[:longitudes] = Visitor.all('longitude' != nil)
+    latitude = Visitor.pluck(:latitude)
+    longitude = Visitor.pluck(:longitude)
     coordinates
   end
+
 end
