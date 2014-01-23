@@ -11,7 +11,6 @@ var geocoder = new google.maps.Geocoder();
   }); 
 
 var lat_long_array = gon.lat_long_array;
-alert(gon.lat_long_array);
 
 for (var i = 0; i < lat_long_array.length; i++) {
   var lat_lngs = new google.maps.LatLng(lat_long_array[i][0], lat_long_array[i][1]);
