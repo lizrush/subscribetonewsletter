@@ -1,6 +1,6 @@
 <%= include_gon %>
 <h2>Visits by Location </h2>
-<div id="map-container" style="height:300px; width:500px"> 
+<div id="map-container" style="height:500px; width:900px">
   <div id="map-canvas" style="width: 100%; height: 100%"></div>
 </div>
 <%= @lat_long_array %>
@@ -16,16 +16,16 @@
       <th>Firefox</th>
       <th>Safari</th>
       <th>IE</th>
-      <th>Other</th> 
+      <th>Other</th>
       </tr>
-    </thead> 
+    </thead>
     <tbody>
     <tr>
-      <td id="chrome"> <%= @chrome %></td>
-      <td id="firefox"> <%= @firefox %></td>
-      <td id="safari"> <%= @safari %></td>
-      <td id="ie"> <%= @ie %></td>
-      <td id="other"> <%= @other_browsers %></td>
+      <td id="chrome"> <%=  @browser_data[:chrome] %></td>
+      <td id="firefox"> <%= @browser_data[:firefox] %></td>
+      <td id="safari"> <%= @browser_data[:safari] %></td>
+      <td id="ie"> <%= @browser_data[:ie] %></td>
+      <td id="other"> <%= @browser_data[:other]  %></td>
     </tr></tbody>
   </table>
 </div>
@@ -39,7 +39,7 @@
       <th>Total Visitors</th>
       <th>New Visitors</th>
       <th>Returning Visitors</th>
-    </thead> 
+    </thead>
     <tbody>
       <td id="totalvisitors"> <%= @total_visitors %></td>
       <td id="new_visitors"> <%= @new_visitors %></td>
@@ -58,15 +58,14 @@
     <th>Non-mobile Visitors</th>
   </thead>
   <tbody>
-    <td id="mobile_visits"><%= @mobile %></td>
-    <td id="nonmobile_visits"><%= @nonmobile %> </td>
+    <td id="mobile_visits"><%= @mobile_data[:mobile] %></td>
+    <td id="nonmobile_visits"><%= @mobile_data[:nonmobile] %> </td>
   </tbody>
 </table>
 </div>
 <br>
 
 <h2>All Stats:</h2>
-
 <table class="table table-striped">
   <thead>
     <th>Id</th>
