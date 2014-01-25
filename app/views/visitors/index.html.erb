@@ -41,9 +41,9 @@
       <th>Returning Visitors</th>
     </thead>
     <tbody>
-      <td id="totalvisitors"> <%= @total_visitors %></td>
-      <td id="new_visitors"> <%= @new_visitors %></td>
-      <td id="returning_visitors"> <%= @returning_visitors %></td>
+      <td id="totalvisitors"> <%= @return_data[:total] %></td>
+      <td id="new_visitors"> <%= @return_data[:new] %></td>
+      <td id="returning_visitors"> <%= @return_data[:returning] %></td>
     </tbody>
   </table>
 </div>
@@ -68,28 +68,22 @@
 <h2>All Stats:</h2>
 <table class="table table-striped">
   <thead>
-    <th>Id</th>
     <th>Pageviews</th>
-    <th>IP address</th>
     <th>Referrer</th>
     <th>Amount of visits</th>
     <th>Device</th>
     <th>Browser</th>
     <th>Version</th>
-    <th>Mobile</th>
   </thead>
 
     <% Visitor.all.each do |v| %>
       <tbody>
-    <td><%= v.id %></td>
     <td><%= v.pageviews %></td>
-    <td><%= v.ip_address %></td>
     <td><%= v.referrer %></td>
     <td><%= v.numberofvisits %></td>
-    <td><%= v.device %></td>`
+    <td><%= v.device %></td>
     <td><%= v.browser %></td>
     <td><%= v.browserversion %></td>
-    <td><%= v.mobile %></td>
   </tbody>
    <%end%>
 </table>

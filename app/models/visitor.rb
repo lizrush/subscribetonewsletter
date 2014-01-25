@@ -27,7 +27,7 @@ class Visitor < ActiveRecord::Base
     count_visitors = {}
     count_visitors[:total] = Visitor.count
     count_visitors[:returning] = Visitor.where('numberofvisits'.to_i > 1).count
-    count_visitors[:new] = Visitor.where('numberofvisits'.to_i == 1).count
+    count_visitors[:new] = count_visitors[:total] - count_visitors[:returning]
     count_visitors
   end
 
